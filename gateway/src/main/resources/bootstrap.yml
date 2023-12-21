@@ -17,12 +17,19 @@ spring:
     activate:
       on-profile: dev
   cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #开启自动注册服务
+
     nacos:
       discovery:
         # 服务注册地址
         server-addr: 116.62.14.14:8848
+        namespace: public
       config:
         # 配置中心地址
         server-addr: 116.62.14.14:8848
+        namespace: public
         # 配置文件格式
-        file-extension: yml
+        file-extension: yaml

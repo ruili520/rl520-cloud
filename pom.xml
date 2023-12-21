@@ -18,13 +18,14 @@
         <spring-cloud-alibaba.version>2022.0.0.0</spring-cloud-alibaba.version>
         <spring-boot.version>3.1.6</spring-boot.version>
         <cloud-common.version>0.0.1-SNAPSHOT</cloud-common.version>
-        <sa-token.version>1.36.0</sa-token.version>
+        <sa-token.version>1.37.0</sa-token.version>
     </properties>
 
     <!--子模块-->
     <modules>
         <module>gateway</module>
         <module>cloud-common</module>
+        <module>cloud-common-redis</module>
     </modules>
 
     <!-- 依赖声明 -->
@@ -77,7 +78,7 @@
             <!-- Sa-Token 权限认证（Reactor响应式集成），在线文档：https://sa-token.cc -->
             <dependency>
                 <groupId>cn.dev33</groupId>
-                <artifactId>sa-token-reactor-spring-boot-starter</artifactId>
+                <artifactId>sa-token-reactor-spring-boot3-starter</artifactId>
                 <version>${sa-token.version}</version>
                 <type>pom</type>
                 <scope>import</scope>

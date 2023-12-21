@@ -62,7 +62,7 @@
             <dependency>
                 <groupId>cn.rl520</groupId>
                 <artifactId>cloud-common</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>0.0.1</version>
             </dependency>
 
             <!-- Sa-Token 权限认证, 在线文档：https://sa-token.cc -->
@@ -83,6 +83,15 @@
                 <scope>import</scope>
             </dependency>
 
+
+            <!-- Sa-Token 整合 Redis （使用 jackson 序列化方式） -->
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-redis-jackson</artifactId>
+                <version>${sa-token.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
 
         </dependencies>

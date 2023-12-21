@@ -4,11 +4,12 @@
     <parent>
         <groupId>cn.rl520</groupId>
         <artifactId>rl520-cloud</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
     <groupId>cn.rl520</groupId>
     <artifactId>cloud-common</artifactId>
     <name>cloud-common</name>
+    <version>0.0.1</version>
     <description>微服务系统中公用内容</description>
     <packaging>pom</packaging>
 
@@ -18,7 +19,7 @@
     </properties>
 
     <modules>
-
+        <module>cloud-common-redis</module>
     </modules>
 
     <dependencies>

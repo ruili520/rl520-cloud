@@ -25,7 +25,6 @@
     <modules>
         <module>gateway</module>
         <module>cloud-common</module>
-        <module>cloud-common-redis</module>
     </modules>
 
     <!-- 依赖声明 -->

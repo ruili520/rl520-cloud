@@ -17,11 +17,12 @@
         <spring-cloud.version>2022.0.3</spring-cloud.version>
         <spring-cloud-alibaba.version>2022.0.0.0</spring-cloud-alibaba.version>
         <spring-boot.version>3.1.6</spring-boot.version>
-        <cloud-common.version>0.0.1-SNAPSHOT</cloud-common.version>
+        <cloud-common.version>0.0.1</cloud-common.version>
         <sa-token.version>1.37.0</sa-token.version>
         <commons-pool2.version>2.11.1</commons-pool2.version>
         <commons-lang3.version>3.14.0</commons-lang3.version>
         <lombok.version>1.18.30</lombok.version>
+        <hutool.version>5.8.22</hutool.version>
     </properties>
 
     <!--子模块-->
@@ -62,10 +63,15 @@
                 <scope>import</scope>
             </dependency>
 
+
+            <!--hutool核心-->
             <dependency>
-                <groupId>cn.rl520</groupId>
-                <artifactId>cloud-common</artifactId>
-                <version>0.0.1</version>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-bom</artifactId>
+                <version>${hutool.version}</version>
+                <type>pom</type>
+                <!-- 注意这里是import -->
+                <scope>import</scope>
             </dependency>
 
             <!-- Sa-Token 权限认证, 在线文档：https://sa-token.cc -->
@@ -124,6 +130,13 @@
                 <scope>import</scope>
             </dependency>
 
+<!--            <dependency>-->
+<!--                <groupId>cn.rl520</groupId>-->
+<!--                <artifactId>cloud-common-core</artifactId>-->
+<!--                <version>${cloud-common.version}</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
 
         </dependencies>
     </dependencyManagement>

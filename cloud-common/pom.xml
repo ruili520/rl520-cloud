@@ -19,7 +19,6 @@
     </properties>
 
     <modules>
-
         <module>cloud-common-redis</module>
     </modules>
 

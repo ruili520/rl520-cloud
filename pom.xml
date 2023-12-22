@@ -77,7 +77,7 @@
             <!-- Sa-Token 权限认证, 在线文档：https://sa-token.cc -->
             <dependency>
                 <groupId>cn.dev33</groupId>
-                <artifactId>sa-token-spring-boot-starter</artifactId>
+                <artifactId>sa-token-spring-boot3-starter</artifactId>
                 <version>${sa-token.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -129,14 +129,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
-<!--            <dependency>-->
-<!--                <groupId>cn.rl520</groupId>-->
-<!--                <artifactId>cloud-common-core</artifactId>-->
-<!--                <version>${cloud-common.version}</version>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--            </dependency>-->
 
         </dependencies>
     </dependencyManagement>

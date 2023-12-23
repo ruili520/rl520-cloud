@@ -27,6 +27,16 @@ spring:
     gateway:
       # 打印请求日志(自定义)
       requestLog: true
+    sentinel:
+      # 取消控制台懒加载
+      eager: true
+      transport:
+        # 控制台地址
+        dashboard: 127.0.0.1:8858
+        # 端口地址，服务会启动该端口与Sentinel进行通讯
+        port: 8890
+        #定义注册至哨兵控制台的ip
+        client-ip: 127.0.0.1
 
 
 # api接口加密

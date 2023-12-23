@@ -1,6 +1,9 @@
 package cn.rl520.cloud.gateway.utils;
 
 import cn.hutool.core.util.ObjectUtil;
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
+import cn.rl520.cloud.gateway.domain.Result;
 import org.springframework.cloud.gateway.support.ServerWebExchangeUtils;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.core.io.buffer.DataBufferUtils;
@@ -60,5 +63,58 @@ public class WebFluxUtils {
         return bodyRef.get();
     }
 
+
+    /**
+     * 设置webflux模型响应
+     *
+     * @param response ServerHttpResponse
+     * @param value    响应内容
+     * @return Mono<Void>
+     */
+    public static Mono<Void> webFluxResponseWriter(ServerHttpResponse response, Object value) {
+        return webFluxResponseWriter(response, HttpStatus.OK, value, Result.FAIL);
+    }
+
+    /**
+     * 设置webflux模型响应
+     *
+     * @param response ServerHttpResponse
+     * @param code     响应状态码
+     * @param value    响应内容
+     * @return Mono<Void>
+     */
+    public static Mono<Void> webFluxResponseWriter(ServerHttpResponse response, Object value, int code) {
+        return webFluxResponseWriter(response, HttpStatus.OK, value, code);
+    }
+
+    /**
+     * 设置webflux模型响应
+     *
+     * @param response ServerHttpResponse
+     * @param status   http状态码
+     * @param code     响应状态码
+     * @param value    响应内容
+     * @return Mono<Void>
+     */
+    public static Mono<Void> webFluxResponseWriter(ServerHttpResponse response, HttpStatus status, Object value, int code) {
+        return webFluxResponseWriter(response, MediaType.APPLICATION_JSON_VALUE, status, value, code);
+    }
+
+    /**
+     *
+     * @param response
+     * @param contentType
+     * @param status
+     * @param value
+     * @param code
+     * @return
+     */
+    public static Mono<Void> webFluxResponseWriter(ServerHttpResponse response, String contentType, HttpStatus status, Object value, int code) {
+        response.setStatusCode(status);
+        response.getHeaders().add(HttpHeaders.CONTENT_TYPE, contentType);
+        Result<?> result = Result.fail(code, value.toString());
+        DataBuffer dataBuffer = response.bufferFactory().wrap(JSONUtil.toJsonStr(result).getBytes());
+        return response.writeWith(Mono.just(dataBuffer));
+    }
 
 }

@@ -1,5 +1,6 @@
 package cn.rl520.cloud.gateway.handler;
 
+import cn.rl520.cloud.gateway.utils.WebFluxUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.reactive.error.ErrorWebExceptionHandler;
 import org.springframework.cloud.gateway.support.NotFoundException;
@@ -22,6 +23,19 @@ public class GatewayExceptionHandler implements ErrorWebExceptionHandler {
 
     @Override
     public Mono<Void> handle(ServerWebExchange exchange, Throwable ex) {
-        return null;
+        ServerHttpResponse response = exchange.getResponse();
+        if (exchange.getResponse().isCommitted()) {
+            return Mono.error(ex);
+        }
+        String msg;
+        if (ex instanceof NotFoundException) {
+            msg = "服务未找到";
+        } else if (ex instanceof ResponseStatusException responseStatusException) {
+            msg = responseStatusException.getMessage();
+        } else {
+            msg = "内部服务器错误";
+        }
+        log.error("[网关异常处理]请求路径:{},异常信息:{},返回可读性信息:{}", exchange.getRequest().getPath(), ex.getMessage(),msg);
+        return WebFluxUtils.webFluxResponseWriter(response, msg);
     }
 }

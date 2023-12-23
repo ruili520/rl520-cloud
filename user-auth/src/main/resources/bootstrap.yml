@@ -1,6 +1,6 @@
 # Tomcat
 server:
-  port: 7100
+  port: 9000
 
 spring:
   profiles:
@@ -12,16 +12,11 @@ spring:
 spring: 
   application:
     # 应用名称
-    name: gateway
+    name: user-auth
   config:
     activate:
       on-profile: dev
   cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true #开启自动注册服务
-
     nacos:
       discovery:
         # 服务注册地址

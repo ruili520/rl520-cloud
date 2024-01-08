@@ -1,0 +1,100 @@
+package ${package.Controller};
+
+import cn.echase.cloud.common.result.aop.EcareResponseResult;
+import ${package.Entity}.entity.${Entity};
+import ${package.Entity}.vo.${Vo};
+import ${package.Service}.impl.${table.serviceImplName};
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+#if(${restControllerStyle})
+import org.springframework.web.bind.annotation.RestController;
+#else
+import org.springframework.stereotype.Controller;
+#end
+import org.springframework.web.bind.annotation.RequestMethod;
+import cn.echase.cloud.common.core.web.page.TableDataInfo;
+
+#if(${superControllerClassPackage})
+import ${superControllerClassPackage};
+#end
+
+import java.util.List;
+
+
+/**
+ * <p>
+ * $!{table.comment} 前端控制器
+ * </p>
+ *
+ * @author ${author}
+ * @date ${date}
+ */
+@RequiredArgsConstructor
+@EcareResponseResult
+#if(${restControllerStyle})
+@RestController
+#else
+@Controller
+#end
+@RequestMapping("#if(${package.ModuleName})/${package.ModuleName}#end/#if(${controllerMappingHyphenStyle})${controllerMappingHyphen}#else${table.entityPath}#end")
+#if(${kotlin})
+class ${table.controllerName}#if(${superControllerClass}) : ${superControllerClass}()#end
+#else
+#if(${superControllerClass})
+public class ${table.controllerName} extends ${superControllerClass} {
+#else
+public class ${table.controllerName} {
+    
+        private final ${table.serviceImplName} baseService;
+
+        /**
+         * 编辑$!{table.comment}
+         */
+        @RequestMapping(value = "save",method = RequestMethod.POST)
+        public void save${Entity}(@RequestBody ${Entity} ${entity}){
+            baseService.save(${entity});
+        }
+
+        /**
+         * 获取$!{table.comment}列表
+         */
+        @RequestMapping(value = "list",method = RequestMethod.POST)
+        public List<${Vo}> get${Entity}s(@RequestBody ${Entity} ${entity}){
+                return baseService.list(${entity});
+        }
+
+        /**
+         * 获取$!{table.comment}分页
+         */
+        @RequestMapping(value = "page",method = RequestMethod.POST)
+        public TableDataInfo get${Entity}Page(@RequestBody ${Entity} ${entity}){
+                return baseService.page(${entity});
+        }
+        
+        /**
+         * 获取$!{table.comment}信息
+         */
+        @RequestMapping(value = "getVo",method = RequestMethod.POST)
+        public ${Vo} get${Vo}(@RequestBody ${Entity} ${entity}){
+                return baseService.getVo(${entity});
+        }
+        
+        /**
+         * 删除$!{table.comment}信息-软删除
+         */
+        @RequestMapping(value = "delete",method = RequestMethod.POST)
+        public void delete${Vo}(@RequestBody ${Entity} ${entity}){
+              baseService.delete(${entity});
+        }
+        
+        /**
+         * 删除$!{table.comment}信息-硬删除
+         */
+        @RequestMapping(value = "delete1",method = RequestMethod.POST)
+        public void delete${Vo}1(@RequestBody ${Entity} ${entity}){
+            baseService.delete1(${entity});
+        }
+#end
+}
+#end

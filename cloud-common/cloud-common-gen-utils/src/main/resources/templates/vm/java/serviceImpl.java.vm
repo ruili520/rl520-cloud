@@ -1,0 +1,91 @@
+package ${package.ServiceImpl};
+
+import cn.echase.cloud.common.core.utils.StringUtils;
+import ${package.Entity}.entity.${Entity};
+import ${package.Entity}.vo.${Vo};
+import ${package.Mapper}.${table.mapperName};
+import ${package.Service}.${table.serviceName};
+import ${superServiceImplClassPackage};
+import org.springframework.stereotype.Service;
+import cn.echase.cloud.common.core.web.page.TableDataInfo;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.github.f4b6a3.ulid.UlidCreator;
+import lombok.RequiredArgsConstructor;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import cn.echase.cloud.common.core.web.service.BaseService;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Collection;
+
+/**
+ * $!{table.comment} 服务实现类
+ *
+ * @author ${author}
+ * @date ${date}
+ */
+@RequiredArgsConstructor
+@Service
+#if(${kotlin})
+open class ${table.serviceImplName} : ${superServiceImplClass}<${table.mapperName}, ${entity}>(), ${table.serviceName} {
+
+}
+#else
+public class ${table.serviceImplName} extends BaseService implements ${table.serviceName} {
+
+        private final ${table.mapperName} baseMapper;
+
+        @Override
+        public void save(${Entity} ${entity}) {
+            if (StringUtils.isNotEmpty(${entity}.getUuId())){
+                QueryWrapper<${Entity}> wrapper =  WrapperBuild(null);
+                wrapper.eq("uu_id",${entity}.getUuId());
+                baseMapper.update(${entity},wrapper);
+            }else {
+                ${entity}.setUuId(UlidCreator.getUlid().toLowerCase());
+                baseMapper.insert(${entity});
+            }
+        }
+
+        @Override
+        public List<${Vo}> list(${Entity} ${entity}) {
+            QueryWrapper<${Entity}> wrapper =  WrapperBuild(null);
+            List<${Vo}> ${entity}Vos = baseMapper.selectVoList(wrapper);
+            return ${entity}Vos;
+        }
+
+        @Override
+        public TableDataInfo page(${Entity} ${entity}) {
+            QueryWrapper<${Entity}> wrapper =  WrapperBuild(null);
+            TableDataInfo tableDataInfo = getDataTable(baseMapper.selectVoPage(
+            new Page<>(${entity}.getCurrent(),${entity}.getSize())
+            ,wrapper, ${Vo}.class));
+            return tableDataInfo;
+        }
+
+        @Override
+        public ${Vo} getVo(${Entity} ${entity}) {
+            QueryWrapper<${Entity}> wrapper =  WrapperBuild(null);
+            wrapper.eq("uu_id",${entity}.getUuId());
+            return baseMapper.selectVoOne(wrapper, ${Vo}.class);
+        }
+
+        @Override
+        public void delete(${Entity} ${entity}) {
+            QueryWrapper<${Entity}> wrapper =  WrapperBuild(null);
+            wrapper.eq("uu_id",${entity}.getUuId());
+            ${Entity} entity = new ${Entity}();
+            entity.setDelFlag("2");
+            baseMapper.update(entity,wrapper);
+        }
+
+        @Override
+        public void delete1(${Entity} ${entity}) {
+            QueryWrapper<${Entity}> wrapper =  WrapperBuild(null);
+            wrapper.eq("uu_id",${entity}.getUuId());
+            baseMapper.delete(wrapper);
+        }
+
+}
+#end
+

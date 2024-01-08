@@ -1,0 +1,53 @@
+package ${package.Service};
+
+import ${package.Entity}.entity.${Entity};
+import ${package.Entity}.vo.${Vo};
+import cn.echase.cloud.common.core.web.page.TableDataInfo;
+
+import java.util.Collection;
+import java.util.List;
+
+
+/**
+ * <p>
+ * $!{table.comment} 服务类
+ * </p>
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+#if(${kotlin})
+interface ${table.serviceName}
+#else
+public interface ${table.serviceName}  {
+
+        /**
+         * 编辑$!{table.comment}
+         */
+        void save(${Entity} ${entity});
+        /**
+         * 获取$!{table.comment}列表
+         */
+        List<${Vo}> list(${Entity} ${entity});
+
+        /**
+         * 查询$!{table.comment}分页
+         */
+        TableDataInfo page(${Entity} ${entity});
+
+        /**
+         * 获取$!{table.comment}信息
+         */
+        ${Vo} getVo(${Entity} ${entity});
+
+        /**
+         * 删除$!{table.comment}信息-软删除
+         */
+        void delete(${Entity} ${entity});
+
+        /**
+         * 删除$!{table.comment}信息-硬删除
+         */
+        void delete1(${Entity} ${entity});
+}
+#end

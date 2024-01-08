@@ -14,14 +14,17 @@
     <!--定义依赖版本号-->
     <properties>
         <java.version>17</java.version>
-        <spring-cloud.version>2022.0.3</spring-cloud.version>
+        <spring-cloud.version>2023.0.0</spring-cloud.version>
         <spring-cloud-alibaba.version>2022.0.0.0</spring-cloud-alibaba.version>
-        <spring-boot.version>3.1.6</spring-boot.version>
+        <spring-boot.version>3.2.0</spring-boot.version>
         <cloud-common.version>0.0.1</cloud-common.version>
         <sa-token.version>1.37.0</sa-token.version>
         <commons-pool2.version>2.11.1</commons-pool2.version>
         <commons-lang3.version>3.14.0</commons-lang3.version>
         <lombok.version>1.18.30</lombok.version>
+        <hutool.version>5.8.22</hutool.version>
+        <mapstruct-plus.version>1.3.5</mapstruct-plus.version>
+        <mapstruct-plus.lombok.version>0.2.0</mapstruct-plus.lombok.version>
         <hutool.version>5.8.22</hutool.version>
     </properties>
 
@@ -29,6 +32,9 @@
     <modules>
         <module>gateway</module>
         <module>cloud-common</module>
+        <module>cloud-modules</module>
+        <module>user-auth</module>
+        <module>cloud-api</module>
     </modules>
 
     <!-- 依赖声明 -->
@@ -53,7 +59,6 @@
                 <scope>import</scope>
             </dependency>
 
-
             <!-- SpringBoot 依赖配置 -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -63,7 +68,6 @@
                 <scope>import</scope>
             </dependency>
 
-
             <!--hutool核心-->
             <dependency>
                 <groupId>cn.hutool</groupId>
@@ -71,6 +75,15 @@
                 <version>${hutool.version}</version>
                 <type>pom</type>
                 <!-- 注意这里是import -->
+                <scope>import</scope>
+            </dependency>
+
+            <!-- hutool 的依赖配置-->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-bom</artifactId>
+                <version>${hutool.version}</version>
+                <type>pom</type>
                 <scope>import</scope>
             </dependency>
 
@@ -92,11 +105,26 @@
                 <scope>import</scope>
             </dependency>
 
-
             <!-- Sa-Token 整合 Redis （使用 jackson 序列化方式） -->
             <dependency>
                 <groupId>cn.dev33</groupId>
                 <artifactId>sa-token-redis-jackson</artifactId>
+                <version>${sa-token.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-core</artifactId>
+                <version>${sa-token.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.dev33</groupId>
+                <artifactId>sa-token-jwt</artifactId>
                 <version>${sa-token.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -111,7 +139,7 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+            <!--commons-lang3 依赖 https://mvnrepository.com/artifact/org.apache.commons/commons-lang3-->
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
@@ -120,12 +148,19 @@
                 <scope>import</scope>
             </dependency>
 
-
-            <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+            <!-- lombok 依赖 -->
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>io.github.linpeilie</groupId>
+                <artifactId>mapstruct-plus-spring-boot-starter</artifactId>
+                <version>${mapstruct-plus.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -151,14 +186,54 @@
         <repository>
             <id>releases</id>
             <name> Nexus Release Repository</name>
-            <url>http://116.62.14.14:9081/repository/maven-releases/</url>
+            <url>http://172.20.2.96:9081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
             <name> Nexus Release Repository</name>
-            <url>http://116.62.14.14:9081/repository/maven-snapshots/</url>
+            <url>http://172.20.2.96:9081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>UTF-8</encoding>
+                    <parameters>true</parameters>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.springframework.boot</groupId>
+                            <artifactId>spring-boot-configuration-processor</artifactId>
+                            <version>${spring-boot.version}</version>
+                        </path>
+                        <path>
+                            <groupId>io.github.linpeilie</groupId>
+                            <artifactId>mapstruct-plus-processor</artifactId>
+                            <version>${mapstruct-plus.version}</version>
+                        </path>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok-mapstruct-binding</artifactId>
+                            <version>${mapstruct-plus.lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

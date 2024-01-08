@@ -1,0 +1,64 @@
+spring:
+  datasource:
+    username: root
+    password: ruili425714
+    url: jdbc:mysql://localhost:3306/ecare-jimureport?useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      # 连接池最大连接数
+      maximum-pool-size: 400
+      # 空闲时保持最小连接数
+      minimum-idle: 20
+      # 空闲连接存活时间
+      idle-timeout: 30000
+      # 连接超时时间
+      connection-timeout: 1800000
+      #池中连接最长生命周期
+      max-lifetime: 1800000
+minidao :
+  base-package: org.jeecg.modules.jmreport.desreport.dao*
+  db-type: mysql
+
+jeecg:
+  minidao-datasource:
+  jmreport:
+    #数据字典是否进行saas数据隔离(限制只能看自己的字典)
+    saas: false
+    #是否 禁用导出PDF和图片的按钮 默认为false
+    exportDisabled: false
+    #是否自动保存
+    autoSave: false
+    #自动保存间隔时间毫秒
+    interval: 20000
+    # 列索引
+    col: 300
+    #自定义项目前缀
+    #customPrePath: /report
+    # 自定义API接口的前缀 #{api_base_path}的值
+    # apiBasePath: http://10.10.0.138:83/
+    #预览分页自定义
+    pageSize:
+      - 10
+      - 20
+      - 50
+      - 100
+    #打印纸张自定义
+    printPaper:
+      - title: 标签打印
+        size:
+          - 140
+          - 100
+    #接口超时设置（毫秒）
+    connect-timeout: 1800000
+    #Excel导出模式(fast/快、primary/精致模式，默认fast)
+    export-excel-pattern: fast
+    #Excel导出数据每个sheet的行数,每个sheet最大1048576行
+    page-size-number: 1048576
+    #excel样式超过多少行显示默认样式（只在fast模式下有效）
+    excel-style-row: 1048576
+    #预览页面的工具条 是否显示 默认true
+    viewToolbar: true
+    #设计页面表格的线是否显示 默认true
+    line: true
+    #sql数据源不写字典下拉框显示条数 版本1.4.2之后被放弃
+    select-show-total: 10

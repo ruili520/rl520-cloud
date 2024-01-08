@@ -8,7 +8,7 @@
         <artifactId>cloud-common</artifactId>
         <version>0.0.1</version>
     </parent>
-
+    <groupId>cn.rl520</groupId>
     <artifactId>cloud-common-redis</artifactId>
     <version>0.0.1</version>
     <description>redis的缓存支持</description>

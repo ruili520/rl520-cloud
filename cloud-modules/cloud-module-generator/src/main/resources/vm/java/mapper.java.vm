@@ -1,0 +1,15 @@
+package ${packageName}.mapper;
+
+import ${packageName}.domain.${ClassName};
+import ${packageName}.vo.${ClassName}Vo;
+import cn.echase.cloud.common.mybatis.plus.mapper.BaseMapperPlus;
+
+/**
+ * ${functionName}Mapper接口
+ *
+ * @author ${author}
+ * @date ${datetime}
+ */
+public interface ${ClassName}Mapper extends BaseMapperPlus<${ClassName}, ${ClassName}Vo> {
+
+}

@@ -1,0 +1,30 @@
+# Tomcat
+server:
+  port: 9100
+
+spring:
+  profiles:
+    # 环境配置
+    active: dev
+
+---
+# 开发环境
+spring: 
+  application:
+    # 应用名称
+    name: system
+  config:
+    activate:
+      on-profile: dev
+  cloud:
+    nacos:
+      discovery:
+        # 服务注册地址
+        server-addr: 127.0.0.1:8848
+        namespace: cloud-test
+      config:
+        # 配置中心地址
+        server-addr: 127.0.0.1:8848
+        namespace: cloud-test
+        # 配置文件格式
+        file-extension: yaml

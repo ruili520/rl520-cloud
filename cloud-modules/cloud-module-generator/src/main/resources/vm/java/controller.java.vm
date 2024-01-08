@@ -1,0 +1,89 @@
+package ${packageName}.controller;
+
+import cn.echase.cloud.common.result.aop.EcareResponseResult;
+import ${packageName}.service.impl.${ClassName}ServiceImpl;
+import ${packageName}.vo.${ClassName}Vo;
+import ${packageName}.domain.${ClassName};
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.dromara.common.core.validate.AddGroup;
+import org.dromara.common.core.validate.EditGroup;
+import org.dromara.common.log.enums.BusinessType;
+import ${packageName}.service.I${ClassName}Service;
+#if($table.crud || $table.sub)
+import cn.echase.cloud.common.core.web.page.TableDataInfo;
+#elseif($table.tree)
+#end
+
+import java.util.List;
+
+
+/**
+ * ${functionName}
+ * 前端访问路由地址为:/${moduleName}/${businessName}
+ *
+ * @author ${author}
+ * @date ${datetime}
+ */
+@Validated
+@RequiredArgsConstructor
+@EcareResponseResult
+@RestController
+@RequestMapping("/${businessName}")
+public class ${ClassName}Controller{
+
+    private final I${ClassName}Service ${className}Service;
+
+    /**
+     * 编辑${functionName}
+     */
+    @RequestMapping(value = "save",method = RequestMethod.POST)
+    public void save${ClassName}(@RequestBody ${ClassName} ${className}){
+        ${className}Service.save(${className});
+    }
+
+    /**
+     * 获取${functionName}列表
+     */
+    @RequestMapping(value = "list",method = RequestMethod.POST)
+    public List<${ClassName}Vo> get${ClassName}s(@RequestBody ${ClassName} ${className}){
+        return ${className}Service.list(${className});
+    }
+
+    /**
+     * 获取${functionName}分页
+     */
+    @RequestMapping(value = "page",method = RequestMethod.POST)
+    public TableDataInfo get${ClassName}Page(@RequestBody ${ClassName} ${className}){
+        return ${className}Service.page(${className});
+    }
+
+    /**
+     * 获取${functionName}信息
+     */
+    @RequestMapping(value = "getVo",method = RequestMethod.POST)
+    public ${ClassName}Vo get${ClassName}Vo(@RequestBody ${ClassName} ${className}){
+        return ${className}Service.getVo(${className});
+    }
+
+    /**
+     * 删除${functionName}信息-软删除
+     */
+    @RequestMapping(value = "delete",method = RequestMethod.POST)
+    public void delete${ClassName}Vo(@RequestBody ${ClassName} ${className}){
+        return ${className}Service.delete(${className});
+    }
+
+    /**
+     * 删除${functionName}信息-硬删除
+     */
+    @RequestMapping(value = "delete1",method = RequestMethod.POST)
+    public void delete${ClassName}Vo1(@RequestBody ${ClassName} ${className}){
+         ${className}Service.delete1(${className});
+    }
+
+}

@@ -27,8 +27,8 @@ sentinel:
   dashboard:
     version: '@project.version@'
 nacos:
-  serverAddr: 172.20.2.96:8848
-  namespace: 0c6aa36a-bd86-4b6c-8c94-99f36480f411
+  serverAddr: 127.0.0.1:8848
+  namespace: public
 
 
 

@@ -1,0 +1,3 @@
+cn.rl520.cloud.common.result.interceptor.EcareResultWebMvcConfigurer
+cn.rl520.cloud.common.result.interceptor.EcareResponseResultHandlerInterceptor
+cn.rl520.cloud.common.result.advice.EcareResultResponseAdvice

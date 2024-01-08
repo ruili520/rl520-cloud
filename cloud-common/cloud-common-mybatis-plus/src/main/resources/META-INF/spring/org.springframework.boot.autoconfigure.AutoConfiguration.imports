@@ -1,0 +1,2 @@
+cn.rl520.cloud.common.mybatis.plus.config.MybatisPlusConfiguration
+cn.rl520.cloud.common.mybatis.plus.handler.MybatisExceptionHandler

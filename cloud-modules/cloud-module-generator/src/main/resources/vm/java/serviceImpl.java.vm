@@ -1,0 +1,86 @@
+package ${packageName}.service.impl;
+
+import com.github.f4b6a3.ulid.UlidCreator;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+#if($table.crud || $table.sub)
+import cn.echase.cloud.common.core.web.page.TableDataInfo;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+#end
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import cn.echase.cloud.common.core.web.service.BaseService;
+import lombok.RequiredArgsConstructor;
+import ${packageName}.vo.${ClassName}Vo;
+import ${packageName}.domain.${ClassName};
+import ${packageName}.mapper.${ClassName}Mapper;
+import ${packageName}.service.I${ClassName}Service;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Collection;
+
+/**
+ * ${functionName}Service业务层处理
+ *
+ * @author ${author}
+ * @date ${datetime}
+ */
+@RequiredArgsConstructor
+@Service
+public class ${ClassName}ServiceImpl extends BaseService implements I${ClassName}Service {
+
+    private final ${ClassName}Mapper baseMapper;
+
+    @Override
+    public void save(${ClassName} ${className}) {
+        if (StringUtils.isNotEmpty(${className}.getUuId())){
+            QueryWrapper<${ClassName}> wrapper =  WrapperBuild(null);
+            wrapper.eq("uu_id",${className}.getUuId());
+            baseMapper.update(sysClient,wrapper);
+        }else {
+            ${className}.setUuId(UlidCreator.getUlid().toLowerCase());
+            baseMapper.insert(${className});
+        }
+    }
+
+    @Override
+    public List<${ClassName}Vo> list(${ClassName} ${className}) {
+        QueryWrapper<${ClassName}> wrapper =  WrapperBuild(null);
+        List<${ClassName}Vo> ${className}Vos = baseMapper.selectVoList(wrapper);
+        return ${className}Vos;
+    }
+
+    @Override
+    public TableDataInfo page(${ClassName} ${className}) {
+        QueryWrapper<${ClassName}> wrapper =  WrapperBuild(null);
+        TableDataInfo tableDataInfo = getDataTable(baseMapper.selectVoPage(
+                new Page<>(${className}.getCurrent(),${className}.getSize())
+                ,wrapper, ${ClassName}Vo.class));
+        return tableDataInfo;
+    }
+
+    @Override
+    public ${ClassName}Vo getVo(${ClassName} ${className}) {
+        QueryWrapper<SysClient> wrapper =  WrapperBuild(null);
+        wrapper.eq("uu_id",${className}.getUuId());
+        return baseMapper.selectVoOne(wrapper, ${ClassName}Vo.class);
+    }
+
+    @Override
+    public ${ClassName}Vo delete(${ClassName} ${className}) {
+        QueryWrapper<SysClient> wrapper =  WrapperBuild(null);
+        wrapper.eq("uu_id",${className}.getUuId());
+        ${ClassName} ${className} = new ${ClassName}();
+        ${className}.setDelFlag("2");
+        return baseMapper.update(${ClassName}.class,wrapper);
+    }
+
+    @Override
+    public ${ClassName}Vo delete1(${ClassName} ${className}) {
+        QueryWrapper<SysClient> wrapper =  WrapperBuild(null);
+        wrapper.eq("uu_id",${className}.getUuId());
+        return baseMapper.delete(wrapper);
+    }
+
+}
+

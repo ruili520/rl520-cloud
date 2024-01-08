@@ -16,14 +16,25 @@
     <properties>
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <rl520-cloud.version>0.0.1</rl520-cloud.version>
     </properties>
 
     <modules>
         <module>cloud-common-redis</module>
+        <module>cloud-common-version</module>
+        <module>cloud-common-core</module>
+        <module>cloud-common-mybatis-plus</module>
+        <module>cloud-common-result</module>
+        <module>cloud-common-satoken</module>
+        <module>cloud-common-gen-utils</module>
     </modules>
 
     <dependencies>
-
+        <!-- bootstrap 启动器 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

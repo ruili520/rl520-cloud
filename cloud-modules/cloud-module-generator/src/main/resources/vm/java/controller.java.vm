@@ -1,6 +1,6 @@
 package ${packageName}.controller;
 
-import cn.echase.cloud.common.result.aop.EcareResponseResult;
+import cn.rl520.cloud.common.result.aop.EcareResponseResult;
 import ${packageName}.service.impl.${ClassName}ServiceImpl;
 import ${packageName}.vo.${ClassName}Vo;
 import ${packageName}.domain.${ClassName};
@@ -15,7 +15,7 @@ import org.dromara.common.core.validate.EditGroup;
 import org.dromara.common.log.enums.BusinessType;
 import ${packageName}.service.I${ClassName}Service;
 #if($table.crud || $table.sub)
-import cn.echase.cloud.common.core.web.page.TableDataInfo;
+import cn.rl520.cloud.common.core.web.page.TableDataInfo;
 #elseif($table.tree)
 #end
 

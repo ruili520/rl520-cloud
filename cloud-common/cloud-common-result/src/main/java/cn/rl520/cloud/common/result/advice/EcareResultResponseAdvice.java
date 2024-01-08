@@ -1,7 +1,7 @@
 package cn.rl520.cloud.common.result.advice;
 
-import cn.echase.cloud.common.core.domain.Result;
-import cn.echase.cloud.common.core.exception.EcareException;
+import cn.rl520.cloud.common.core.domain.Result;
+import cn.rl520.cloud.common.core.exception.EcareException;
 import cn.rl520.cloud.common.result.aop.EcareResponseResult;
 import cn.hutool.json.JSONUtil;
 import jakarta.servlet.http.HttpServletRequest;

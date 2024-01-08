@@ -9,9 +9,9 @@ package ${package.Entity}.entity;
 import ${pkg};
 #end
 ###if($IsTenant==1)
-##import cn.echase.cloud.common.core.domain.TenantEntity;
+##import cn.rl520.cloud.common.core.domain.TenantEntity;
 ###else
-import cn.echase.cloud.common.core.domain.BaseEntity;
+import cn.rl520.cloud.common.core.domain.BaseEntity;
 ###end
 #if(${springdoc})
 import io.swagger.v3.oas.annotations.media.Schema;

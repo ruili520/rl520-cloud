@@ -1,6 +1,6 @@
 package cn.rl520.cloud.system.vo;
 
-import cn.echase.cloud.common.core.utils.StringUtils;
+import cn.rl520.cloud.common.core.utils.StringUtils;
 import lombok.Data;
 
 import java.io.Serial;

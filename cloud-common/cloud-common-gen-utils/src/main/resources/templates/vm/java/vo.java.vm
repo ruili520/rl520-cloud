@@ -9,11 +9,11 @@ package ${package.Entity}.vo;
 import ${pkg};
 #end
 ###if($IsTenant==1)
-##import cn.echase.cloud.common.core.domain.TenantEntity;
+##import cn.rl520.cloud.common.core.domain.TenantEntity;
 ###else
 ##
 ###end
-import cn.echase.cloud.common.core.domain.BaseEntity;
+import cn.rl520.cloud.common.core.domain.BaseEntity;
 #if(${springdoc})
 import io.swagger.v3.oas.annotations.media.Schema;
 #elseif(${swagger})

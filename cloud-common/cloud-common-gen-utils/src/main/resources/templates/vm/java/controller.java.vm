@@ -1,6 +1,6 @@
 package ${package.Controller};
 
-import cn.echase.cloud.common.result.aop.EcareResponseResult;
+import cn.rl520.cloud.common.result.aop.EcareResponseResult;
 import ${package.Entity}.entity.${Entity};
 import ${package.Entity}.vo.${Vo};
 import ${package.Service}.impl.${table.serviceImplName};
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.stereotype.Controller;
 #end
 import org.springframework.web.bind.annotation.RequestMethod;
-import cn.echase.cloud.common.core.web.page.TableDataInfo;
+import cn.rl520.cloud.common.core.web.page.TableDataInfo;
 
 #if(${superControllerClassPackage})
 import ${superControllerClassPackage};

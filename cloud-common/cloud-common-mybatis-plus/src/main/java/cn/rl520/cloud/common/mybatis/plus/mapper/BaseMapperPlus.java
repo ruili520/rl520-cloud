@@ -1,6 +1,6 @@
 package cn.rl520.cloud.common.mybatis.plus.mapper;
 
-import cn.echase.cloud.common.core.utils.MapstructUtils;
+import cn.rl520.cloud.common.core.utils.MapstructUtils;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;

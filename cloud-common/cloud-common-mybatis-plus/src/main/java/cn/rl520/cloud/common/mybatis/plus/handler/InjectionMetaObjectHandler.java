@@ -1,9 +1,9 @@
 package cn.rl520.cloud.common.mybatis.plus.handler;
 
-import cn.echase.cloud.common.core.domain.BaseEntity;
-import cn.echase.cloud.common.core.domain.LoginUser;
-import cn.echase.cloud.common.core.exception.EcareException;
-import cn.echase.cloud.common.satoken.utils.LoginHelper;
+import cn.rl520.cloud.common.core.domain.BaseEntity;
+import cn.rl520.cloud.common.core.domain.LoginUser;
+import cn.rl520.cloud.common.core.exception.EcareException;
+import cn.rl520.cloud.common.satoken.utils.LoginHelper;
 import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.http.HttpStatus;
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;

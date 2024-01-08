@@ -1,8 +1,10 @@
 package cn.rl520.cloud.gateway.filter;
 
-import cn.hutool.http.HtmlUtil;
 import cn.rl520.cloud.gateway.config.properties.XssProperties;
 import cn.rl520.cloud.gateway.utils.WebFluxUtils;
+import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.http.HtmlUtil;
 import io.netty.buffer.ByteBufAllocator;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,31 +18,31 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpRequestDecorator;
 import org.springframework.stereotype.Component;
+import org.springframework.util.AntPathMatcher;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 /**
  * 跨站脚本过滤器
  *
- * @author wwb
+ * @author ruoyi
  */
 @Slf4j
 @Component
-//@ConditionalOnProperty(value = "security.xss.enabled", havingValue = "true")
+@ConditionalOnProperty(value = "security.xss.enabled", havingValue = "true")
 public class XssFilter implements GlobalFilter, Ordered {
     // 跨站脚本的 xss 配置，nacos自行添加
     @Autowired
-    private XssProperties xssProperties;
+    private XssProperties xss;
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        log.info("xss过滤器收到请求，请求方式{}");
         ServerHttpRequest request = exchange.getRequest();
         // GET DELETE 不过滤
-        log.info("xss过滤器收到请求，请求方式{}",request.getMethod());
         HttpMethod method = request.getMethod();
         if (method == null || method == HttpMethod.GET || method == HttpMethod.DELETE) {
             return chain.filter(exchange);
@@ -51,7 +53,7 @@ public class XssFilter implements GlobalFilter, Ordered {
         }
         // excludeUrls 不过滤
         String url = request.getURI().getPath();
-        if (WebFluxUtils.matches(url, xssProperties.getExcludeUrls())) {
+        if (matches(url, xss.getExcludeUrls())) {
             return chain.filter(exchange);
         }
         ServerHttpRequestDecorator httpRequestDecorator = requestDecorator(exchange);
@@ -98,6 +100,49 @@ public class XssFilter implements GlobalFilter, Ordered {
 
     @Override
     public int getOrder() {
-        return Ordered.HIGHEST_PRECEDENCE;
+        return 0;
+    }
+
+    /**
+     * * 判断一个字符串是否为空串
+     *
+     * @param str String
+     * @return true：为空 false：非空
+     */
+    public static boolean isEmpty(String str) {
+        return StrUtil.isEmpty(str);
+    }
+
+    /**
+     * 查找指定字符串是否匹配指定字符串列表中的任意一个字符串
+     *
+     * @param str  指定字符串
+     * @param strs 需要检查的字符串数组
+     * @return 是否匹配
+     */
+    public static boolean matches(String str, List<String> strs) {
+        if (isEmpty(str) || CollUtil.isEmpty(strs)) {
+            return false;
+        }
+        for (String pattern : strs) {
+            if (isMatch(pattern, str)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 判断url是否与规则配置:
+     * ? 表示单个字符;
+     * * 表示一层路径内的任意字符串，不可跨层级;
+     * ** 表示任意层路径;
+     *
+     * @param pattern 匹配规则
+     * @param url     需要匹配的url
+     */
+    public static boolean isMatch(String pattern, String url) {
+        AntPathMatcher matcher = new AntPathMatcher();
+        return matcher.match(pattern, url);
     }
 }

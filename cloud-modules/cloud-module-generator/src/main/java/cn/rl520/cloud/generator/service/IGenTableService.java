@@ -1,6 +1,6 @@
 package cn.rl520.cloud.generator.service;
 
-import cn.echase.cloud.common.core.web.page.TableDataInfo;
+import cn.rl520.cloud.common.core.web.page.TableDataInfo;
 import cn.rl520.cloud.generator.domain.GenTable;
 import cn.rl520.cloud.generator.domain.GenTableColumn;
 

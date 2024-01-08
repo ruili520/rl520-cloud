@@ -1,6 +1,6 @@
 package cn.rl520.cloud.common.mybatis.plus.config;
 
-import cn.echase.cloud.common.core.factory.YmlPropertySourceFactory;
+import cn.rl520.cloud.common.core.factory.YmlPropertySourceFactory;
 import cn.rl520.cloud.common.mybatis.plus.handler.InjectionMetaObjectHandler;
 import cn.rl520.cloud.common.mybatis.plus.interceptor.PlusDataPermissionInterceptor;
 import cn.hutool.core.net.NetUtil;

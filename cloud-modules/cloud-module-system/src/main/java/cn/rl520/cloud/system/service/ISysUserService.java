@@ -1,6 +1,6 @@
 package cn.rl520.cloud.system.service;
 
-import cn.echase.cloud.common.core.web.page.TableDataInfo;
+import cn.rl520.cloud.common.core.web.page.TableDataInfo;
 import cn.rl520.cloud.system.domain.SysUser;
 import cn.rl520.cloud.system.vo.SysUserVo;
 

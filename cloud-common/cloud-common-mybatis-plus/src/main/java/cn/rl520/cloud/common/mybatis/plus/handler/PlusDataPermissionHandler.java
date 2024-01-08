@@ -1,16 +1,16 @@
 package cn.rl520.cloud.common.mybatis.plus.handler;
 
-import cn.echase.cloud.common.core.domain.LoginUser;
-import cn.echase.cloud.common.core.domain.RoleDTO;
-import cn.echase.cloud.common.core.exception.EcareException;
-import cn.echase.cloud.common.core.utils.SpringUtils;
-import cn.echase.cloud.common.core.utils.StreamUtils;
-import cn.echase.cloud.common.core.utils.StringUtils;
+import cn.rl520.cloud.common.core.domain.LoginUser;
+import cn.rl520.cloud.common.core.domain.RoleDTO;
+import cn.rl520.cloud.common.core.exception.EcareException;
+import cn.rl520.cloud.common.core.utils.SpringUtils;
+import cn.rl520.cloud.common.core.utils.StreamUtils;
+import cn.rl520.cloud.common.core.utils.StringUtils;
 import cn.rl520.cloud.common.mybatis.plus.annotation.DataColumn;
 import cn.rl520.cloud.common.mybatis.plus.annotation.DataPermission;
 import cn.rl520.cloud.common.mybatis.plus.enums.DataScopeType;
 import cn.rl520.cloud.common.mybatis.plus.helper.DataPermissionHelper;
-import cn.echase.cloud.common.satoken.utils.LoginHelper;
+import cn.rl520.cloud.common.satoken.utils.LoginHelper;
 import cn.hutool.core.annotation.AnnotationUtil;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ClassUtil;

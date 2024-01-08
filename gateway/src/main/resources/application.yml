@@ -4,7 +4,7 @@ spring:
       # Redis数据库索引（默认为0）
       database: 5
       # Redis服务器地址
-      host: 172.20.2.96
+      host: 127.0.0.1
       # Redis服务器连接端口
       port: 15379
       # Redis服务器连接密码（默认为空）
@@ -64,7 +64,7 @@ security:
     whites:
       - /auth/code
       - /auth/logout
-      - /auth/login
+      - /user-auth/login
       - /auth/binding/*
       - /auth/social/callback
       - /auth/register
@@ -73,3 +73,14 @@ security:
       - /*/v3/api-docs
       - /*/error
       - /csrf
+
+#路由端点操作
+management:
+  endpoint:
+    gateway:
+      # gateway 端点开启
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "gateway"

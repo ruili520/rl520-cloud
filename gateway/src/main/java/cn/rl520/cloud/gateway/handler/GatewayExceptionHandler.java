@@ -4,7 +4,6 @@ import cn.rl520.cloud.gateway.utils.WebFluxUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.reactive.error.ErrorWebExceptionHandler;
 import org.springframework.cloud.gateway.support.NotFoundException;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.web.server.ResponseStatusException;
@@ -18,11 +17,12 @@ import reactor.core.publisher.Mono;
  */
 @Slf4j
 @Order(-1)
-@Configuration
+//@Configuration
 public class GatewayExceptionHandler implements ErrorWebExceptionHandler {
 
     @Override
     public Mono<Void> handle(ServerWebExchange exchange, Throwable ex) {
+        System.out.println("全局异常处理---------------");
         ServerHttpResponse response = exchange.getResponse();
         if (exchange.getResponse().isCommitted()) {
             return Mono.error(ex);

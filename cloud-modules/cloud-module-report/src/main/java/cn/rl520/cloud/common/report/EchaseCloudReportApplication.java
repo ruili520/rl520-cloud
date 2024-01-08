@@ -9,7 +9,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
  * @Author wenbo
  * @Date 2024/1/3 11:09
  */
-@SpringBootApplication(exclude = {MongoAutoConfiguration.class}, scanBasePackages = {"org.jeecg.modules.jmreport","cn.echase.cloud.common.report"})
+@SpringBootApplication(exclude = {MongoAutoConfiguration.class}, scanBasePackages = {"org.jeecg.modules.jmreport","cn.rl520.cloud.common.report"})
 @RefreshScope
 public class EchaseCloudReportApplication {
 

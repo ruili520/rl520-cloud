@@ -1,9 +1,9 @@
 package cn.rl520.cloud.generator.util;
 
-import cn.echase.cloud.common.core.utils.DateUtils;
-import cn.echase.cloud.common.core.utils.JsonUtils;
-import cn.echase.cloud.common.core.utils.StringUtils;
-import cn.echase.cloud.common.mybatis.plus.helper.DataBaseHelper;
+import cn.rl520.cloud.common.core.utils.DateUtils;
+import cn.rl520.cloud.common.core.utils.JsonUtils;
+import cn.rl520.cloud.common.core.utils.StringUtils;
+import cn.rl520.cloud.common.mybatis.plus.helper.DataBaseHelper;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.lang.Dict;

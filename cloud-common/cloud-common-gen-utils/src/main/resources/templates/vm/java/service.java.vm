@@ -2,7 +2,7 @@ package ${package.Service};
 
 import ${package.Entity}.entity.${Entity};
 import ${package.Entity}.vo.${Vo};
-import cn.echase.cloud.common.core.web.page.TableDataInfo;
+import cn.rl520.cloud.common.core.web.page.TableDataInfo;
 
 import java.util.Collection;
 import java.util.List;

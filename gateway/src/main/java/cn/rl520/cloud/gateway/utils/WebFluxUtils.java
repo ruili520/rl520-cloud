@@ -1,10 +1,12 @@
 package cn.rl520.cloud.gateway.utils;
 
+import cn.rl520.cloud.common.core.domain.Result;
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
-import cn.rl520.cloud.gateway.domain.Result;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.cloud.gateway.support.ServerWebExchangeUtils;
 import org.springframework.core.io.buffer.DataBuffer;
 import org.springframework.core.io.buffer.DataBufferUtils;
 import org.springframework.http.HttpHeaders;
@@ -24,13 +26,14 @@ import java.nio.charset.StandardCharsets;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Function;
 
 import static org.springframework.cloud.gateway.support.ServerWebExchangeUtils.GATEWAY_ORIGINAL_REQUEST_URL_ATTR;
 
 /**
  * WebFlux 工具类
  *
- * @author Lion Li
+ * @author wenbo
  */
 public class WebFluxUtils {
 
@@ -171,6 +174,25 @@ public class WebFluxUtils {
         Result<?> result = Result.fail(code, value.toString());
         DataBuffer dataBuffer = response.bufferFactory().wrap(JSONUtil.toJsonStr(result).getBytes());
         return response.writeWith(Mono.just(dataBuffer));
+    }
+
+    /**
+     * 从缓存中读取request内的body
+     *
+     * 注意要求经过 {@link ServerWebExchangeUtils#cacheRequestBody(ServerWebExchange, Function)} 此方法创建缓存
+     *
+     * @return body
+     */
+    public static String resolveBodyFromCacheRequest(ServerWebExchange exchange) {
+        Object obj = exchange.getAttributes().get(ServerWebExchangeUtils.CACHED_REQUEST_BODY_ATTR);
+        if (ObjectUtil.isNull(obj)) {
+            return null;
+        }
+        DataBuffer buffer = (DataBuffer) obj;
+        try (DataBuffer.ByteBufferIterator iterator = buffer.readableByteBuffers()) {
+            CharBuffer charBuffer = StandardCharsets.UTF_8.decode(iterator.next());
+            return charBuffer.toString();
+        }
     }
 
 }

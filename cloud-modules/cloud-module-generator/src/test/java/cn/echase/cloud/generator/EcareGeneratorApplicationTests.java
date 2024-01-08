@@ -1,4 +1,4 @@
-package cn.echase.cloud.generator;
+package cn.rl520.cloud.generator;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

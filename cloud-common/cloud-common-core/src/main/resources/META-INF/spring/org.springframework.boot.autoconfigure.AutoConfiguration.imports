@@ -1,2 +1,2 @@
-cn.echase.cloud.common.core.utils.SpringUtils
-cn.echase.cloud.common.core.listener.UserActionListener
+cn.rl520.cloud.common.core.utils.SpringUtils
+cn.rl520.cloud.common.core.listener.UserActionListener

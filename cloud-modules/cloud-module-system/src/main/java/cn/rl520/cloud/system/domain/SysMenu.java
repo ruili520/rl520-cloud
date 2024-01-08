@@ -1,9 +1,9 @@
 package cn.rl520.cloud.system.domain;
 
-import cn.echase.cloud.common.core.constant.Constants;
-import cn.echase.cloud.common.core.constant.UserConstants;
-import cn.echase.cloud.common.core.domain.TenantEntity;
-import cn.echase.cloud.common.core.utils.StringUtils;
+import cn.rl520.cloud.common.core.constant.Constants;
+import cn.rl520.cloud.common.core.constant.UserConstants;
+import cn.rl520.cloud.common.core.domain.TenantEntity;
+import cn.rl520.cloud.common.core.utils.StringUtils;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;

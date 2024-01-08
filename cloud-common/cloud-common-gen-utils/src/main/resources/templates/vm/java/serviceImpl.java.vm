@@ -1,18 +1,18 @@
 package ${package.ServiceImpl};
 
-import cn.echase.cloud.common.core.utils.StringUtils;
+import cn.rl520.cloud.common.core.utils.StringUtils;
 import ${package.Entity}.entity.${Entity};
 import ${package.Entity}.vo.${Vo};
 import ${package.Mapper}.${table.mapperName};
 import ${package.Service}.${table.serviceName};
 import ${superServiceImplClassPackage};
 import org.springframework.stereotype.Service;
-import cn.echase.cloud.common.core.web.page.TableDataInfo;
+import cn.rl520.cloud.common.core.web.page.TableDataInfo;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.github.f4b6a3.ulid.UlidCreator;
 import lombok.RequiredArgsConstructor;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import cn.echase.cloud.common.core.web.service.BaseService;
+import cn.rl520.cloud.common.core.web.service.BaseService;
 
 import java.util.List;
 import java.util.Map;

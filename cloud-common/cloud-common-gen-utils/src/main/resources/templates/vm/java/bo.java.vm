@@ -6,14 +6,14 @@ package ${packageName}.domain.bo;
     #end
 #end
 #if($IsTenant==1)
-import cn.echase.cloud.common.core.domain.TenantEntity;
+import cn.rl520.cloud.common.core.domain.TenantEntity;
 #else
-import cn.echase.cloud.common.core.domain.BaseEntity;
+import cn.rl520.cloud.common.core.domain.BaseEntity;
 #end
 import ${packageName}.domain.${ClassName};
-import cn.echase.cloud.common.core.domain.TenantEntity;
-import cn.echase.cloud.common.core.validate.AddGroup;
-import cn.echase.cloud.common.core.validate.EditGroup;
+import cn.rl520.cloud.common.core.domain.TenantEntity;
+import cn.rl520.cloud.common.core.validate.AddGroup;
+import cn.rl520.cloud.common.core.validate.EditGroup;
 import io.github.linpeilie.annotations.AutoMapper;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -1,7 +1,7 @@
 package cn.rl520.cloud.example.controller;
 
-import cn.echase.cloud.common.result.aop.EcareResponseResult;
-import cn.echase.cloud.common.satoken.utils.LoginHelper;
+import cn.rl520.cloud.common.result.aop.EcareResponseResult;
+import cn.rl520.cloud.common.satoken.utils.LoginHelper;
 import cn.rl520.cloud.example.domain.SysMenu;
 import cn.rl520.cloud.example.service.impl.SysMenuServiceImpl;
 import cn.rl520.cloud.example.vo.RouterVo;

@@ -1,7 +1,7 @@
 package cn.rl520.cloud.common.mybatis.plus.utils;
 
-import cn.echase.cloud.common.core.domain.TenantEntity;
-import cn.echase.cloud.common.core.utils.StringUtils;
+import cn.rl520.cloud.common.core.domain.TenantEntity;
+import cn.rl520.cloud.common.core.utils.StringUtils;
 import cn.rl520.cloud.common.mybatis.plus.domain.DataSource;
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
@@ -52,7 +52,7 @@ public class GeneratorUtils {
                         .addInclude(tableNames)
                         .entityBuilder().superClass(TenantEntity.class).enableLombok().enableFileOverride().logicDeleteColumnName("delFlag").addIgnoreColumns("tenant_id", "create_dept","create_by", "create_time", "update_by", "update_time")
                         .serviceBuilder().enableFileOverride()
-                        .mapperBuilder().enableFileOverride().superClass("cn.echase.cloud.common.mybatis.plus.mapper.BaseMapperPlus").enableBaseResultMap().enableBaseColumnList()
+                        .mapperBuilder().enableFileOverride().superClass("cn.rl520.cloud.common.mybatis.plus.mapper.BaseMapperPlus").enableBaseResultMap().enableBaseColumnList()
                         .controllerBuilder().enableFileOverride()
                         .build())
                 .execute();

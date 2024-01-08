@@ -1,4 +1,4 @@
-package cn.echase.cloud.common.system.api.domain.vo;
+package cn.rl520.cloud.common.system.api.domain.vo;
 
 import lombok.Data;
 

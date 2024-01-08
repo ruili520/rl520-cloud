@@ -1,7 +1,7 @@
 package cn.rl520.cloud.generator.domain;
 
-import cn.echase.cloud.common.core.domain.BaseEntity;
-import cn.echase.cloud.common.core.utils.StringUtils;
+import cn.rl520.cloud.common.core.domain.BaseEntity;
+import cn.rl520.cloud.common.core.utils.StringUtils;
 import com.baomidou.mybatisplus.annotation.FieldStrategy;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;

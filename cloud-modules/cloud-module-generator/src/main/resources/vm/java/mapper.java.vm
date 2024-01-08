@@ -2,7 +2,7 @@ package ${packageName}.mapper;
 
 import ${packageName}.domain.${ClassName};
 import ${packageName}.vo.${ClassName}Vo;
-import cn.echase.cloud.common.mybatis.plus.mapper.BaseMapperPlus;
+import cn.rl520.cloud.common.mybatis.plus.mapper.BaseMapperPlus;
 
 /**
  * ${functionName}Mapper接口

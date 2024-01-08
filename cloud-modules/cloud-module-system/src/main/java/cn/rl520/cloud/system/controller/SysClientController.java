@@ -1,8 +1,8 @@
 package cn.rl520.cloud.system.controller;
 
-import cn.echase.cloud.common.core.domain.model.RemoteClientDto;
-import cn.echase.cloud.common.core.web.page.TableDataInfo;
-import cn.echase.cloud.common.result.aop.EcareResponseResult;
+import cn.rl520.cloud.common.core.domain.model.RemoteClientDto;
+import cn.rl520.cloud.common.core.web.page.TableDataInfo;
+import cn.rl520.cloud.common.result.aop.EcareResponseResult;
 import cn.rl520.cloud.system.service.impl.SysClientServiceImpl;
 import cn.rl520.cloud.system.vo.SysClientVo;
 import lombok.RequiredArgsConstructor;

@@ -1,7 +1,7 @@
 package cn.rl520.cloud.system.mapper;
 
-import cn.echase.cloud.common.core.constant.UserConstants;
-import cn.echase.cloud.common.mybatis.plus.mapper.BaseMapperPlus;
+import cn.rl520.cloud.common.core.constant.UserConstants;
+import cn.rl520.cloud.common.mybatis.plus.mapper.BaseMapperPlus;
 import cn.rl520.cloud.system.domain.SysMenu;
 import cn.rl520.cloud.system.vo.SysMenuVo;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;

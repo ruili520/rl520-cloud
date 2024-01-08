@@ -1,4 +1,4 @@
-package cn.echase.cloud.common.system.api.domain.dto;
+package cn.rl520.cloud.common.system.api.domain.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

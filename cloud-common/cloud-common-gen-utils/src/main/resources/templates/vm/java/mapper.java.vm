@@ -6,7 +6,7 @@ import ${superMapperClassPackage};
 #if(${mapperAnnotationClass})
     import ${mapperAnnotationClass.name};
 #end
-import cn.echase.cloud.common.mybatis.plus.mapper.BaseMapperPlus;
+import cn.rl520.cloud.common.mybatis.plus.mapper.BaseMapperPlus;
 
 /**
  * ${table.mapperName}接口

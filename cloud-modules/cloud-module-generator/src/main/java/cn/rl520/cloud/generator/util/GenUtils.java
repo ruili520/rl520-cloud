@@ -1,6 +1,6 @@
 package cn.rl520.cloud.generator.util;
 
-import cn.echase.cloud.common.core.utils.StringUtils;
+import cn.rl520.cloud.common.core.utils.StringUtils;
 import cn.rl520.cloud.generator.config.GenConfig;
 import cn.rl520.cloud.generator.constant.GenConstants;
 import cn.rl520.cloud.generator.domain.GenTable;

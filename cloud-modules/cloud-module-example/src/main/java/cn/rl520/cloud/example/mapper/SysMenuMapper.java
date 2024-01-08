@@ -1,9 +1,9 @@
 package cn.rl520.cloud.example.mapper;
 
-import cn.echase.cloud.common.core.constant.UserConstants;
+import cn.rl520.cloud.common.core.constant.UserConstants;
 import cn.rl520.cloud.example.domain.SysMenu;
 import cn.rl520.cloud.example.vo.SysMenuVo;
-import cn.echase.cloud.common.mybatis.plus.mapper.BaseMapperPlus;
+import cn.rl520.cloud.common.mybatis.plus.mapper.BaseMapperPlus;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 
 import java.util.List;

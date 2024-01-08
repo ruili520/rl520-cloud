@@ -1,10 +1,10 @@
 package cn.rl520.cloud.example.mapper;
 
-import cn.echase.cloud.common.mybatis.plus.annotation.DataColumn;
-import cn.echase.cloud.common.mybatis.plus.annotation.DataPermission;
+import cn.rl520.cloud.common.mybatis.plus.annotation.DataColumn;
+import cn.rl520.cloud.common.mybatis.plus.annotation.DataPermission;
 import cn.rl520.cloud.example.domain.SysUser;
 import cn.rl520.cloud.example.vo.SysUserVo;
-import cn.echase.cloud.common.mybatis.plus.mapper.BaseMapperPlus;
+import cn.rl520.cloud.common.mybatis.plus.mapper.BaseMapperPlus;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;

@@ -21,15 +21,16 @@ spring:
       discovery:
         locator:
           enabled: true #开启自动注册服务
+          lowerCaseServiceId: true
 
     nacos:
       discovery:
         # 服务注册地址
         server-addr: 127.0.0.1:8848
-        namespace: public
+        namespace: cloud-test
       config:
         # 配置中心地址
         server-addr: 127.0.0.1:8848
-        namespace: public
+        namespace: cloud-test
         # 配置文件格式
         file-extension: yaml

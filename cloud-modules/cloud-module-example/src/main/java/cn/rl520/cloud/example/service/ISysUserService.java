@@ -1,8 +1,8 @@
 package cn.rl520.cloud.example.service;
 
-import cn.echase.cloud.common.core.domain.LoginUser;
-import cn.echase.cloud.common.core.domain.Result;
-import cn.echase.cloud.common.core.web.page.TableDataInfo;
+import cn.rl520.cloud.common.core.domain.LoginUser;
+import cn.rl520.cloud.common.core.domain.Result;
+import cn.rl520.cloud.common.core.web.page.TableDataInfo;
 import cn.rl520.cloud.example.domain.SysUser;
 import cn.rl520.cloud.example.vo.SysUserVo;
 import org.springframework.web.bind.annotation.RequestBody;

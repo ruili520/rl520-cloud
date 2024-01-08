@@ -80,8 +80,8 @@ public class GeneratorUtil {
 
     public static void main(String[] args) {
         String modulePath = getProjectPath()+"/cloud-common/cloud-common-gen-utils";
-        String parentPackageName = "cn.echase.cloud.common.gen.utils";
-        //generatorCode("cloud-common/cloud-common-gen-utils","cn.echase.cloud.common.gen.utils");
+        String parentPackageName = "cn.rl520.cloud.common.gen.utils";
+        //generatorCode("cloud-common/cloud-common-gen-utils","cn.rl520.cloud.common.gen.utils");
         DataSourceConfig dataSourceConfig = new DataSourceConfig.Builder("jdbc:mysql://127.0.0.1:3306/ecare-cloud","root","ruili425714").build();
         PackageConfig packageInfo = new PackageConfig.Builder().parent(parentPackageName)
                 .entity("domain")

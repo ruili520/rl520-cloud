@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.echase.cloud.generator.mapper.GenTableColumnMapper">
+<mapper namespace="cn.rl520.cloud.generator.mapper.GenTableColumnMapper">
 
-    <resultMap type="cn.echase.cloud.generator.domain.GenTableColumn" id="GenTableColumnResult">
+    <resultMap type="cn.rl520.cloud.generator.domain.GenTableColumn" id="GenTableColumnResult">
     </resultMap>
 
     <select id="selectDbTableColumnsByName" parameterType="String" resultMap="GenTableColumnResult">

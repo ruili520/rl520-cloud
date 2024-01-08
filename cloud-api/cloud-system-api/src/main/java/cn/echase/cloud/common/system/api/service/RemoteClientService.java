@@ -1,9 +1,9 @@
-package cn.echase.cloud.common.system.api.service;
+package cn.rl520.cloud.common.system.api.service;
 
-import cn.echase.cloud.common.core.constant.ServiceNameConstants;
-import cn.echase.cloud.common.core.domain.model.RemoteClientDto;
-import cn.echase.cloud.common.system.api.factory.RemoteUserFallbackFactory;
-import cn.echase.cloud.system.vo.SysClientVo;
+import cn.rl520.cloud.common.core.constant.ServiceNameConstants;
+import cn.rl520.cloud.common.core.domain.model.RemoteClientDto;
+import cn.rl520.cloud.common.system.api.factory.RemoteUserFallbackFactory;
+import cn.rl520.cloud.system.vo.SysClientVo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

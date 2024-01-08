@@ -4,11 +4,11 @@ import com.github.f4b6a3.ulid.UlidCreator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 #if($table.crud || $table.sub)
-import cn.echase.cloud.common.core.web.page.TableDataInfo;
+import cn.rl520.cloud.common.core.web.page.TableDataInfo;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 #end
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import cn.echase.cloud.common.core.web.service.BaseService;
+import cn.rl520.cloud.common.core.web.service.BaseService;
 import lombok.RequiredArgsConstructor;
 import ${packageName}.vo.${ClassName}Vo;
 import ${packageName}.domain.${ClassName};

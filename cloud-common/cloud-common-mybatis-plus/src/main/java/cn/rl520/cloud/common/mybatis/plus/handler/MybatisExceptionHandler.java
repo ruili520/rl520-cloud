@@ -1,6 +1,6 @@
 package cn.rl520.cloud.common.mybatis.plus.handler;
 
-import cn.echase.cloud.common.core.domain.Result;
+import cn.rl520.cloud.common.core.domain.Result;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.MyBatisSystemException;

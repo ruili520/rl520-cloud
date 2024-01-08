@@ -1,7 +1,7 @@
 package cn.rl520.cloud.common.mybatis.plus.helper;
 
-import cn.echase.cloud.common.core.exception.EcareException;
-import cn.echase.cloud.common.core.utils.SpringUtils;
+import cn.rl520.cloud.common.core.exception.EcareException;
+import cn.rl520.cloud.common.core.utils.SpringUtils;
 import cn.rl520.cloud.common.mybatis.plus.enums.DataBaseType;
 import cn.hutool.core.convert.Convert;
 import com.baomidou.dynamic.datasource.DynamicRoutingDataSource;

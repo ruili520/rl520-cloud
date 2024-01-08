@@ -3,7 +3,7 @@ package cn.rl520.cloud.common.satoken.config;
 import cn.dev33.satoken.jwt.StpLogicJwtForSimple;
 import cn.dev33.satoken.stp.StpInterface;
 import cn.dev33.satoken.stp.StpLogic;
-import cn.echase.cloud.common.core.factory.YmlPropertySourceFactory;
+import cn.rl520.cloud.common.core.factory.YmlPropertySourceFactory;
 import cn.rl520.cloud.common.satoken.core.service.SaPermissionImpl;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;

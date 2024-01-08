@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.echase.cloud.system.mapper.SysUserMapper">
+<mapper namespace="cn.rl520.cloud.system.mapper.SysUserMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="cn.echase.cloud.system.vo.SysUserVo">
+    <resultMap id="BaseResultMap" type="cn.rl520.cloud.system.vo.SysUserVo">
         <id column="id" property="id" />
         <result column="user_id" property="userId" />
         <result column="dept_id" property="deptId" />
@@ -22,7 +22,7 @@
         <result column="remark" property="remark" />
     </resultMap>
 
-    <resultMap id="SysUserResult" type="cn.echase.cloud.system.vo.SysUserVo">
+    <resultMap id="SysUserResult" type="cn.rl520.cloud.system.vo.SysUserVo">
         <id column="id" property="id" />
         <result column="user_id" property="userId" />
         <result property="deptId" column="dept_id"/>
@@ -30,14 +30,14 @@
         <collection property="roles" javaType="java.util.List" resultMap="RoleResult"/>
     </resultMap>
 
-    <resultMap id="deptResult"  type="cn.echase.cloud.system.vo.SysDeptVo">
+    <resultMap id="deptResult"  type="cn.rl520.cloud.system.vo.SysDeptVo">
         <result column="dept_id" property="deptId" />
         <result property="email" column="dept_email"/>
         <result property="status" column="dept_status"/>
         <result property="createTime" column="dept_create_time"/>
     </resultMap>
 
-    <resultMap id="RoleResult" type="cn.echase.cloud.system.vo.SysRoleVo">
+    <resultMap id="RoleResult" type="cn.rl520.cloud.system.vo.SysRoleVo">
         <result property="roleId" column="role_id"/>
         <result property="status" column="role_status"/>
         <result property="createTime" column="role_create_time"/>

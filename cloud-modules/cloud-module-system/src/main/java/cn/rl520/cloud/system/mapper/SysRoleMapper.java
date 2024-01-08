@@ -1,6 +1,6 @@
 package cn.rl520.cloud.system.mapper;
 
-import cn.echase.cloud.common.mybatis.plus.mapper.BaseMapperPlus;
+import cn.rl520.cloud.common.mybatis.plus.mapper.BaseMapperPlus;
 import cn.rl520.cloud.system.domain.SysRole;
 import cn.rl520.cloud.system.vo.SysRoleVo;
 

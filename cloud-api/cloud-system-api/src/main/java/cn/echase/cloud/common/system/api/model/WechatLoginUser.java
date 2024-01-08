@@ -1,6 +1,6 @@
-package cn.echase.cloud.common.system.api.model;
+package cn.rl520.cloud.common.system.api.model;
 
-import cn.echase.cloud.common.core.domain.LoginUser;
+import cn.rl520.cloud.common.core.domain.LoginUser;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;

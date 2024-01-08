@@ -1,13 +1,13 @@
-package cn.echase.cloud.common.system.api.factory;
+package cn.rl520.cloud.common.system.api.factory;
 
-import cn.echase.cloud.common.core.domain.LoginUser;
-import cn.echase.cloud.common.core.domain.Result;
-import cn.echase.cloud.common.core.domain.model.RemoteUserDto;
-import cn.echase.cloud.common.core.exception.EcareException;
-import cn.echase.cloud.common.core.exception.user.UserException;
-import cn.echase.cloud.common.system.api.service.RemoteUserService;
-import cn.echase.cloud.system.domain.SysUser;
-import cn.echase.cloud.system.vo.SysUserVo;
+import cn.rl520.cloud.common.core.domain.LoginUser;
+import cn.rl520.cloud.common.core.domain.Result;
+import cn.rl520.cloud.common.core.domain.model.RemoteUserDto;
+import cn.rl520.cloud.common.core.exception.EcareException;
+import cn.rl520.cloud.common.core.exception.user.UserException;
+import cn.rl520.cloud.common.system.api.service.RemoteUserService;
+import cn.rl520.cloud.system.domain.SysUser;
+import cn.rl520.cloud.system.vo.SysUserVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.openfeign.FallbackFactory;

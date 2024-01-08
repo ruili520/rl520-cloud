@@ -1,6 +1,6 @@
 package cn.rl520.cloud.system.vo;
 
-import cn.echase.cloud.common.core.domain.TenantEntity;
+import cn.rl520.cloud.common.core.domain.TenantEntity;
 import lombok.Getter;
 import lombok.Setter;
 

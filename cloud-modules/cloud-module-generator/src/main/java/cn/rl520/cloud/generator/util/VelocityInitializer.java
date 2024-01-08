@@ -1,6 +1,6 @@
 package cn.rl520.cloud.generator.util;
 
-import cn.echase.cloud.common.core.constant.Constants;
+import cn.rl520.cloud.common.core.constant.Constants;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import org.apache.velocity.app.Velocity;

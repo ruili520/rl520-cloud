@@ -6,11 +6,11 @@ package ${packageName}.domain;
 #end
 #end
 #if($IsTenant==1)
-import cn.echase.cloud.common.core.domain.TenantEntity;
+import cn.rl520.cloud.common.core.domain.TenantEntity;
 #else
-import cn.echase.cloud.common.core.domain.BaseEntity;
+import cn.rl520.cloud.common.core.domain.BaseEntity;
 #end
-import cn.echase.cloud.common.mybatis.plus.annotation.*;
+import cn.rl520.cloud.common.mybatis.plus.annotation.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 #foreach ($import in $importList)

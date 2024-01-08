@@ -1,6 +1,6 @@
 package cn.rl520.cloud.generator.mapper;
 
-import cn.echase.cloud.common.mybatis.plus.mapper.BaseMapperPlus;
+import cn.rl520.cloud.common.mybatis.plus.mapper.BaseMapperPlus;
 import cn.rl520.cloud.generator.domain.GenTable;
 import com.baomidou.dynamic.datasource.annotation.DS;
 import com.baomidou.mybatisplus.annotation.InterceptorIgnore;

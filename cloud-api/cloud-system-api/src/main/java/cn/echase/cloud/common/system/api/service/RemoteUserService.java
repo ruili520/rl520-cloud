@@ -1,15 +1,15 @@
-package cn.echase.cloud.common.system.api.service;
+package cn.rl520.cloud.common.system.api.service;
 
-import cn.echase.cloud.common.core.constant.SecurityConstants;
-import cn.echase.cloud.common.core.constant.ServiceNameConstants;
-import cn.echase.cloud.common.core.domain.LoginUser;
-import cn.echase.cloud.common.core.domain.Result;
-import cn.echase.cloud.common.core.domain.model.RemoteUserDto;
-import cn.echase.cloud.common.core.exception.EcareException;
-import cn.echase.cloud.common.core.exception.user.UserException;
-import cn.echase.cloud.common.system.api.factory.RemoteUserFallbackFactory;
-import cn.echase.cloud.system.domain.SysUser;
-import cn.echase.cloud.system.vo.SysUserVo;
+import cn.rl520.cloud.common.core.constant.SecurityConstants;
+import cn.rl520.cloud.common.core.constant.ServiceNameConstants;
+import cn.rl520.cloud.common.core.domain.LoginUser;
+import cn.rl520.cloud.common.core.domain.Result;
+import cn.rl520.cloud.common.core.domain.model.RemoteUserDto;
+import cn.rl520.cloud.common.core.exception.EcareException;
+import cn.rl520.cloud.common.core.exception.user.UserException;
+import cn.rl520.cloud.common.system.api.factory.RemoteUserFallbackFactory;
+import cn.rl520.cloud.system.domain.SysUser;
+import cn.rl520.cloud.system.vo.SysUserVo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 

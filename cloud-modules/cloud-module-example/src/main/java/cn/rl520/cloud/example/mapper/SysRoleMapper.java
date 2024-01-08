@@ -2,7 +2,7 @@ package cn.rl520.cloud.example.mapper;
 
 import cn.rl520.cloud.example.domain.SysRole;
 import cn.rl520.cloud.example.vo.SysRoleVo;
-import cn.echase.cloud.common.mybatis.plus.mapper.BaseMapperPlus;
+import cn.rl520.cloud.common.mybatis.plus.mapper.BaseMapperPlus;
 
 /**
  * <p>

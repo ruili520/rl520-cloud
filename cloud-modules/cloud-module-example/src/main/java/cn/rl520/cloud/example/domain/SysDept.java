@@ -1,6 +1,6 @@
 package cn.rl520.cloud.example.domain;
 
-import cn.echase.cloud.common.core.domain.TenantEntity;
+import cn.rl520.cloud.common.core.domain.TenantEntity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import lombok.Getter;

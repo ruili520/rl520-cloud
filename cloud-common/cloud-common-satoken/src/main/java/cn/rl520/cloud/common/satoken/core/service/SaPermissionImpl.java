@@ -1,8 +1,8 @@
 package cn.rl520.cloud.common.satoken.core.service;
 
 import cn.dev33.satoken.stp.StpInterface;
-import cn.echase.cloud.common.core.domain.LoginUser;
-import cn.echase.cloud.common.core.enums.UserType;
+import cn.rl520.cloud.common.core.domain.LoginUser;
+import cn.rl520.cloud.common.core.enums.UserType;
 import cn.rl520.cloud.common.satoken.utils.LoginHelper;
 
 import java.util.ArrayList;

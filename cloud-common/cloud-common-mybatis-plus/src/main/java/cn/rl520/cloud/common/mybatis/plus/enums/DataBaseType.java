@@ -1,6 +1,6 @@
 package cn.rl520.cloud.common.mybatis.plus.enums;
 
-import cn.echase.cloud.common.core.utils.StringUtils;
+import cn.rl520.cloud.common.core.utils.StringUtils;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

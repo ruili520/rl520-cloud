@@ -1,6 +1,6 @@
-package cn.echase.cloud.common.system.api.service;
+package cn.rl520.cloud.common.system.api.service;
 
-import cn.echase.cloud.common.system.api.domain.vo.RemoteTenantVo;
+import cn.rl520.cloud.common.system.api.domain.vo.RemoteTenantVo;
 
 import java.util.List;
 

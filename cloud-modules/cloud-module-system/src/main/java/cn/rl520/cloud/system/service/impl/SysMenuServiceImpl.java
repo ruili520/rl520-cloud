@@ -1,10 +1,10 @@
 package cn.rl520.cloud.system.service.impl;
 
-import cn.echase.cloud.common.core.constant.UserConstants;
-import cn.echase.cloud.common.core.utils.StreamUtils;
-import cn.echase.cloud.common.core.utils.StringUtils;
-import cn.echase.cloud.common.core.web.service.BaseService;
-import cn.echase.cloud.common.satoken.utils.LoginHelper;
+import cn.rl520.cloud.common.core.constant.UserConstants;
+import cn.rl520.cloud.common.core.utils.StreamUtils;
+import cn.rl520.cloud.common.core.utils.StringUtils;
+import cn.rl520.cloud.common.core.web.service.BaseService;
+import cn.rl520.cloud.common.satoken.utils.LoginHelper;
 import cn.hutool.core.collection.CollUtil;
 import cn.rl520.cloud.system.domain.SysMenu;
 import cn.rl520.cloud.system.mapper.SysMenuMapper;

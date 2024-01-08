@@ -1,10 +1,10 @@
 package cn.rl520.cloud.generator.controller;
 
 import cn.dev33.satoken.annotation.SaCheckPermission;
-import cn.echase.cloud.common.core.utils.JsonUtils;
-import cn.echase.cloud.common.core.web.page.TableDataInfo;
-import cn.echase.cloud.common.mybatis.plus.helper.DataBaseHelper;
-import cn.echase.cloud.common.result.aop.EcareResponseResult;
+import cn.rl520.cloud.common.core.utils.JsonUtils;
+import cn.rl520.cloud.common.core.web.page.TableDataInfo;
+import cn.rl520.cloud.common.mybatis.plus.helper.DataBaseHelper;
+import cn.rl520.cloud.common.result.aop.EcareResponseResult;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.io.IoUtil;
 import cn.rl520.cloud.generator.domain.GenTable;
@@ -13,6 +13,7 @@ import cn.rl520.cloud.generator.service.IGenTableService;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.HashMap;

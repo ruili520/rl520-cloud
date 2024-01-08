@@ -1,6 +1,6 @@
 package cn.rl520.cloud.example.vo;
 
-import cn.echase.cloud.common.core.domain.TenantEntity;
+import cn.rl520.cloud.common.core.domain.TenantEntity;
 import cn.rl520.cloud.example.domain.SysUser;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
